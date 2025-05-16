@@ -1,3 +1,48 @@
+#----------------- Guilherme-----------------------
+
+voos={}
+passageiros = {}
+passagens={}
+
+def dados_voo():
+    codigo=input('Código do voo:')
+    org =input('Cidade de origem:')
+    dest = input('Cidade de destino:')
+    nes= int(input)('Número de escalas:')
+    prç=float(input)('preço da passagem:')
+    lugares=int(input)('Lugares disponíveis:')
+    voos[codigo] ={'origem':org, 'destino':dest, 'escalas':nes, 'preço':prç, 'lugares':lugares}
+    print('Voo cadastrado com sucesso!')
+
+def busca_por_codigo():
+    consulta = input('Digite o código do voo:')
+    if consulta in voos:
+        print(voos[consulta])
+    else:
+        print('Voo inexistente, digite o código correto')
+
+def busca_por_origem():
+    consulta2 =input('Digite a cidade de origem do voo:')
+    cont =0
+    for i in voos:
+        if i['origem']==consulta2:
+            print(f'Código:',i, ' Destino:',voos[i]['destino'], 'Preços: R$',voos[i]['preço'])
+            cont=cont+1
+        elif cont==0:
+            print('Não há voos com este local de origem')
+
+def busca_por_destino():
+    consulta3 =input('Digite a cidade de destino do voo:')
+    cont =0
+    for i in voos:
+        if i['destino']==consulta3:
+            print(f'Código:',i, ' Origem:',voos[i]['origem'], 'Preços: R$',voos[i]['preço'])
+            cont=cont+1
+        elif cont==0:
+            print('Não há voos com este local de destino')
+
+-------------------------------------------------------------------------
+
 usuarios = {}
 programaRondo = True
 
