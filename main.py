@@ -1,8 +1,6 @@
 #----------------- Guilherme-----------------------
 
 voos={}
-passageiros = {}
-passagens={}
 
 def dados_voo():
     codigo=input('Código do voo:')
