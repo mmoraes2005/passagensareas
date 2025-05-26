@@ -95,4 +95,30 @@ def cadastrarUsuario(): # Função para cadastrar o cpf do usuario (Verificando 
     print("Cadastro realizado com sucesso!")
 
 def listaUsuario(): 
-    print("-")
+    if not usuarios:
+        print("Nenhum usuário cadastrado")
+        return
+    
+    print("--- LISTAGEM ---")
+    for cpf, nome in usuarios.items():
+        print(f"CPF:{cpf} | Nome:{nome}")
+
+def sair():
+    global programaRondo
+    programaRondo = False 
+    print("Saindo do sistema")
+
+acoes = {
+    '1': cadastrarUsuario,
+    '2': listaUsuario,
+    '3': sair
+}
+
+while programaRondo:
+    mostrarMenu()
+    opcao = input("Opção: ")
+
+    if opcao in acoes: 
+        acoes[opcao]()
+    else:
+        print("Opção invalida! Digite 1, 2 ou 3")
